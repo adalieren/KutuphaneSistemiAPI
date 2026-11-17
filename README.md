@@ -47,36 +47,6 @@ Uygulama başlatıldığında, veritabanına otomatik olarak bir adet varsayıla
 
 ---
 
-## Kurulum ve Çalıştırma Adımları
-
-### 1. Veritabanı Hazırlığı
-Uygulamayı çalıştırmadan önce yerel PostgreSQL sunucunuzda `library_db` adında bir veritabanı oluşturulmalıdır. PostgreSQL terminalinden veya pgAdmin üzerinden şu komutu çalıştırabilirsiniz:
-```sql
-CREATE DATABASE library_db;
-```
-
-### 2. Veritabanı Bağlantı Ayarları
-`src/main/resources/application.properties` dosyasında PostgreSQL kullanıcı adı ve şifrenizi güncelleyin. Varsayılan yapılandırma aşağıdaki gibidir:
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/library_db
-spring.datasource.username=postgres
-spring.datasource.password=postgres
-```
-*Not: Eğer şifreniz farklı ise `spring.datasource.password` alanını kendi şifrenizle değiştiriniz.*
-
-### 3. Uygulamayı Derleme ve Çalıştırma
-Projenin kök dizininde (`KutuphaneSistemiAPI`) aşağıdaki terminal komutlarını kullanarak projeyi derleyebilir ve ayağa kaldırabilirsiniz:
-
-*   **Derleme (Compile):**
-    ```bash
-    ./gradlew compileJava
-    ```
-*   **Çalıştırma (Run):**
-    ```bash
-    ./gradlew bootRun
-    ```
-
-Uygulama başarıyla başladığında varsayılan olarak **`http://localhost:8080`** portu üzerinde yayında olacaktır. Veritabanı tabloları Hibernate tarafından otomatik olarak oluşturulacaktır (`ddl-auto=update`).
 
 ---
 
